@@ -1,6 +1,5 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  output: 'standalone',
   serverExternalPackages: ['react-apexcharts', 'apexcharts'],
   images: {
     remotePatterns: [
