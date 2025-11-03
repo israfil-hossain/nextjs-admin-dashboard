@@ -1,8 +1,14 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
+  output: 'standalone',
+  serverExternalPackages: ['react-apexcharts', 'apexcharts'],
   images: {
-    domains: ["localhost"],
     remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "",
+      },
       {
         protocol: "https",
         hostname: "cdn.sanity.io",

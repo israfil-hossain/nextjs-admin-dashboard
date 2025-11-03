@@ -65,7 +65,7 @@ TemplateSchema.index({ category: 1 });
 TemplateSchema.index({ isFeatured: 1 });
 TemplateSchema.index({ publishedAt: -1 });
 
-export interface ITemplate extends Template, Document {}
+export interface ITemplate extends Omit<Template, '_id'>, Document {}
 
 const TemplateModel = mongoose.models.Template || mongoose.model<ITemplate>("Template", TemplateSchema);
 

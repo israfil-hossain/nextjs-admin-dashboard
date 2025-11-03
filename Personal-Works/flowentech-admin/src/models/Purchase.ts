@@ -67,7 +67,7 @@ PurchaseSchema.index({ stripeSessionId: 1 });
 PurchaseSchema.index({ downloadToken: 1 });
 PurchaseSchema.index({ purchaseDate: -1 });
 
-export interface IPurchase extends Purchase, Document {}
+export interface IPurchase extends Omit<Purchase, '_id'>, Document {}
 
 const PurchaseModel = mongoose.models.Purchase || mongoose.model<IPurchase>("Purchase", PurchaseSchema);
 
