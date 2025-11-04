@@ -1,9 +1,11 @@
 "use client";
-import ECommerce from "@/components/Dashboard/E-commerce";
 import DefaultLayout from "@/components/Layouts/DefaultLaout";
 import React from "react";
+import dynamic from "next/dynamic";
 
-export const dynamic = 'force-dynamic';
+const ECommerce = dynamic(() => import("@/components/Dashboard/E-commerce"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (

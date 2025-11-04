@@ -1,8 +1,12 @@
 "use client";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import DefaultLayout from "@/components/Layouts/DefaultLaout";
-import RichTextEditor from "@/components/RichTextEditor";
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
+
+const RichTextEditor = dynamic(() => import("@/components/RichTextEditor"), {
+  ssr: false,
+});
 
 const RichTextUI = () => {
   const [info, setContent] = useState('');
@@ -15,7 +19,7 @@ const RichTextUI = () => {
             value={info}
             onChange={setContent}
             placeholder="Start typing..."
-            minHeight={500} 
+            minHeight={500}
         />
       </DefaultLayout>
     </div>
